@@ -1,0 +1,24 @@
+#####################< BEGIN COPYRIGHT >#############################
+#  
+#  Copyright (C) 2007 Freescale Semiconductor, Inc. All rights reserved.
+#  
+#  This is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#  
+#####################<END COPYRIGHT >###################################
+
+#!/bin/bash
+MODULE=fsl_tlu_rc
+DEV_FILE=/dev/tlurc
+ver=`uname -r`
+
+/etc/init.d/fsl_tlu_rc_unload
+
+/sbin/insmod /lib/modules/$ver/kernel/drivers/misc/fsl_tlu/$MODULE.ko
+MAJOR=`grep tlu_rc /proc/devices | cut -c 1-3`
+/bin/mknod $DEV_FILE c $MAJOR 0
+chmod a+rwx $DEV_FILE 
+
+

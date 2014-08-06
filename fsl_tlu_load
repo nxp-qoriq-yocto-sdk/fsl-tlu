@@ -1,0 +1,37 @@
+#####################< BEGIN COPYRIGHT >#############################
+#  
+#  Copyright (C) 2007 Freescale Semiconductor, Inc. All rights reserved.
+#  
+#  This is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#  
+#####################<END COPYRIGHT >###################################
+#!/bin/bash
+
+ver=`uname -r`
+
+./fsl_tlu_unload
+
+. ./fsl_tlu.conf
+insmod /lib/modules/$ver/kernel/drivers/misc/fsl_tlu/fsl_tlu.ko \
+    log_level=$log_level tlu0_addr=$tlu0_addr \
+    tlu0_bank0_addr=$tlu0_bank0_addr tlu0_bank0_size=$tlu0_bank0_size \
+    tlu0_bank0_parity=$tlu0_bank0_parity tlu0_bank0_type=$tlu0_bank0_type \
+    tlu0_bank1_addr=$tlu0_bank1_addr tlu0_bank1_size=$tlu0_bank1_size \
+    tlu0_bank1_parity=$tlu0_bank1_parity tlu0_bank1_type=$tlu0_bank1_type \
+    tlu0_bank2_addr=$tlu0_bank2_addr tlu0_bank2_size=$tlu0_bank2_size \
+    tlu0_bank2_parity=$tlu0_bank2_parity tlu0_bank2_type=$tlu0_bank2_type \
+    tlu0_bank3_addr=$tlu0_bank3_addr tlu0_bank3_size=$tlu0_bank3_size \
+    tlu0_bank3_parity=$tlu0_bank3_parity tlu0_bank3_type=$tlu0_bank3_type \
+    tlu1_addr=$tlu1_addr \
+    tlu1_bank0_addr=$tlu1_bank0_addr tlu1_bank0_size=$tlu1_bank0_size \
+    tlu1_bank0_parity=$tlu1_bank0_parity tlu1_bank0_type=$tlu1_bank0_type \
+    tlu1_bank1_addr=$tlu1_bank1_addr tlu1_bank1_size=$tlu1_bank1_size \
+    tlu1_bank1_parity=$tlu1_bank1_parity tlu1_bank1_type=$tlu1_bank1_type \
+    tlu1_bank2_addr=$tlu1_bank2_addr tlu1_bank2_size=$tlu1_bank2_size \
+    tlu1_bank2_parity=$tlu1_bank2_parity tlu1_bank2_type=$tlu1_bank2_type \
+    tlu1_bank3_addr=$tlu1_bank3_addr tlu1_bank3_size=$tlu1_bank3_size \
+    tlu1_bank3_parity=$tlu1_bank3_parity tlu1_bank3_type=$tlu1_bank3_type 
+

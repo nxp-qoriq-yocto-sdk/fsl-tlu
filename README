@@ -1,0 +1,6 @@
+This package includes the scripts for TLU(Table Lookup Table)
+test scripts and configuration file.
+
+The code in this directory is licensed under the terms of the GPL (see COPYING).
+
+Copyright (C) 2007 Freescale Semiconductor, Inc. All rights reserved.
